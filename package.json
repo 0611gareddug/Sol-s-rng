@@ -1,0 +1,14 @@
+{
+  "name": "grds-rng",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GRD'S RNG - original cosmic aura RNG web game",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js --dev"
+  },
+  "devDependencies": {
+    "javascript-obfuscator": "^4.1.1",
+    "clean-css": "^5.3.3"
+  }
+}

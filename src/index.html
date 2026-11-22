@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#05060F">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="GRD'S RNG — 60종의 천체 오라를 모으는 우주 RNG 게임">
+<title>GRD'S RNG</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3CradialGradient id='g'%3E%3Cstop offset='0' stop-color='%23fff'/%3E%3Cstop offset='.4' stop-color='%238AB4FF'/%3E%3Cstop offset='1' stop-color='%238AB4FF' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%2305060F'/%3E%3Ccircle cx='32' cy='32' r='22' fill='url(%23g)'/%3E%3Cpath d='M32 14l4 14 14 4-14 4-4 14-4-14-14-4 14-4z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="%CSS%">
+</head>
+<body>
+<canvas id="cv"></canvas>
+
+<div id="app">
+  <header id="top">
+    <div class="logo"><span>GRD'S</span> RNG</div>
+    <div id="effects"></div>
+    <div class="top-r">
+      <div class="dust" title="별가루"><i class="sd"></i><b id="dustV">0</b></div>
+      <button class="ib" id="btnMute" aria-label="음소거"></button>
+      <button class="ib" id="btnFs" aria-label="전체화면"></button>
+      <button class="ib pc" id="btnSet" aria-label="설정"></button>
+    </div>
+  </header>
+
+  <div id="mini">
+    <div><small>운</small><b id="mLuck">x1</b></div>
+    <div><small>속도</small><b id="mSpd">x1</b></div>
+    <div><small>축복까지</small><b id="mBless">10</b></div>
+    <div><small>총 롤</small><b id="mRolls">0</b></div>
+  </div>
+  <div id="evMini"></div>
+
+  <aside id="stats" class="glass">
+    <h3>상태</h3>
+    <div class="row"><span>운</span><b id="sLuck">x1.00</b></div>
+    <div class="row"><span>속도</span><b id="sSpd">x1.00</b></div>
+    <div class="row"><span>롤 시간</span><b id="sTime">1.20초</b></div>
+    <div class="sep"></div>
+    <div class="row"><span>총 롤</span><b id="sTotal">0</b></div>
+    <div class="row"><span>이번 회차</span><b id="sRun">0</b></div>
+    <div class="row"><span>환생</span><b id="sPres">0</b></div>
+    <div class="sep"></div>
+    <div class="bless">
+      <div class="row"><span>별의 축복</span><b id="sBless">10회 후</b></div>
+      <div class="bar"><i id="sBlessBar"></i></div>
+    </div>
+    <div class="row hint" id="sOnce"></div>
+  </aside>
+
+  <aside id="side" class="glass">
+    <div id="evCard"></div>
+    <h3>최근 롤</h3>
+    <ul id="log"></ul>
+  </aside>
+
+  <div id="nameplate"><small id="npTitle"></small><b id="npName">먼지별</b></div>
+  <div id="slot"><span id="slotText"></span></div>
+
+  <div id="controls">
+    <button class="cbtn" id="btnAuto"><i></i><span>자동</span></button>
+    <button id="btnRoll" aria-label="롤"><svg viewBox="0 0 100 100"><circle class="trk" cx="50" cy="50" r="46"/><circle class="prg" id="rollPrg" cx="50" cy="50" r="46"/></svg><span>ROLL</span></button>
+    <button class="cbtn" id="btnQuick"><i></i><span>빠른</span></button>
+  </div>
+
+  <nav id="menu"></nav>
+  <nav id="tabs"></nav>
+
+  <div id="dim"></div>
+  <section id="drawer" aria-hidden="true">
+    <div class="handle"></div>
+    <header><h2 id="drTitle"></h2><button class="ib" id="drClose" aria-label="닫기"></button></header>
+    <div id="drBody"></div>
+  </section>
+
+  <div id="reveal"></div>
+  <div id="banner"></div>
+  <div id="toasts"></div>
+  <div id="modal"></div>
+  <button id="skipBtn">건너뛰기 ›</button>
+
+  <div id="start">
+    <div class="st-in">
+      <div class="st-logo"><span>GRD'S</span><br>RNG</div>
+      <p>60종의 천체 오라가 당신을 기다립니다</p>
+      <div class="st-tap">화면을 터치해 시작</div>
+    </div>
+  </div>
+</div>
+<div id="guard"><div><b>⚠</b><p>개발자 도구가 감지되었습니다.<br>닫으면 게임이 다시 표시됩니다.</p></div></div>
+<script src="%JS%"></script>
+</body>
+</html>
